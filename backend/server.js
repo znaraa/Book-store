@@ -5,6 +5,9 @@ require('dotenv').config();
 const Book = require('./model/Book');
 const bookRoutes = require('./routes/bookRoutes');
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 const app = express();
 const PORT = process.env.PORT || 5005;
 
